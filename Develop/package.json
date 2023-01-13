@@ -10,7 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "handlebars": "^4.7.7"
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "path": "^0.12.7",
+    "sequelize": "^6.28.0"
   }
 }
