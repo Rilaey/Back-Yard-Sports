@@ -3,19 +3,19 @@ const { Sport } = require('../models');
 const sportData = [
     {
         name: 'Basketball',
-        players: 'player1',
+        players: 1,
     },
     {
         name: 'Baseball',
-        players: 'player2'
+        players: 2,
     },
     {
         name: 'Swimming',
-        players: 'player3'
+        players: 3,
     },
     {
         name: 'Golf',
-        players: 'player4',
+        players: 4,
     },
 ];
 

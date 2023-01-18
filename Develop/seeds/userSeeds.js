@@ -2,8 +2,6 @@ const { User } = require('../models');
 
 const userData = [
     {
-        sports_played: 'Basketball',
-        teams: 'Best Basketball Team',
         available: 1,
         state: 'FL',
         city: 'Orlando',
@@ -12,8 +10,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        sports_played: 'Baseball',
-        teams: 'Best Baseball Team',
         available: 0,
         state: 'FL',
         city: 'Miami',
@@ -22,8 +18,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        sports_played: 'Swimming',
-        teams: 'Best Swimming Team',
         available: 0,
         state: 'FL',
         city: 'Tampa',
@@ -32,8 +26,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        sports_played: 'Golf',
-        teams: 'Best Golf Team',
         available: 1,
         state: 'FL',
         city: 'Tampa',

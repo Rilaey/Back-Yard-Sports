@@ -14,14 +14,13 @@ Team.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
     },
     captain: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'User',
-        key: 'username'
+        model: 'user',
+        key: 'id'
       }
     },
     sport: {

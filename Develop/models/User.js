@@ -16,21 +16,6 @@ User.init(
       autoIncrement: true,
       allowNull: false,
     },
-    sports_played: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      references: {
-        model: "sport",
-        key: "name",
-      },
-    },
-    teams: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'team',
-        key: 'name'
-      }
-    },
     available: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -46,7 +31,6 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
     },
     email: {
       type: DataTypes.STRING,
