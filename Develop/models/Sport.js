@@ -1,9 +1,9 @@
-const { DataTypes, Model } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Team extends Model {}
+class Sport extends Model {}
 
-Team.init(
+Sport.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,34 +16,22 @@ Team.init(
       allowNull: false,
       primaryKey: true,
     },
-    captain: {
+    players: {
       type: DataTypes.STRING,
       allowNull: true,
       references: {
-        model: 'User',
-        key: 'username'
-      }
+        model: "User",
+        key: "username",
+      },
     },
-    sport: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    state: {
-      type: DataTypes.STRING(2),
-      allowNull: false,
-    }, 
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "team",
+    modelName: "sport",
   }
 );
 
-module.exports = Team;
+module.exports = Sport;
