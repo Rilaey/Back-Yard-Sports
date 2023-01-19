@@ -10,6 +10,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const chatPORT = process.env.CHAT_PORT || 3003;
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -57,6 +58,6 @@ io.on('connection', (socket) => {
   });
 });
 
-http.listen(PORT, () => {
-  console.log(`Socket.IO server running at http://localhost:${PORT}/`);
+http.listen(chatPORT, () => {
+  console.log(`Socket.IO server running at http://localhost:${chatPORT}/`);
 });
