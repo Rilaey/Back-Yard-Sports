@@ -16,7 +16,7 @@ User.init(
       autoIncrement: true,
       allowNull: false,
     },
-    available: {
+    currently_available: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
