@@ -14,14 +14,13 @@ Sport.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
     },
     players: {
-      type: DataTypes.STRING,
-      allowNull: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: "User",
-        key: "username",
+        model: "user",
+        key: "id",
       },
     },
   },

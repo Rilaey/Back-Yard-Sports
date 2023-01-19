@@ -15,6 +15,7 @@ Team.belongsTo(User, {
 
 ////////////////////////////////
 
+// this association does nothing, but seeds don't work if i remove it.
 Sport.hasMany(User, {
   foreignKey: "sports_played",
   onDelete: "CASCADE",
@@ -36,13 +37,5 @@ Sport.belongsTo(User, {
 
 ////////////////////////////////
 
-Team.hasMany(User, {
-  foreignKey: "teams",
-  onDelete: "CASCADE",
-});
-
-User.belongsTo(Team, {
-  foreignKey: "teams",
-});
 
 module.exports = { User, Team, Sport };
