@@ -1,5 +1,5 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../config/connection");
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Team extends Model {}
 
@@ -17,31 +17,39 @@ Team.init(
     },
     captain: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'user',
-        key: 'id'
-      }
+        key: 'id',
+      },
+    },
+    players: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     sport: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     state: {
       type: DataTypes.STRING(2),
       allowNull: false,
-    }, 
+    },
     city: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "team",
+    modelName: 'team',
   }
 );
 

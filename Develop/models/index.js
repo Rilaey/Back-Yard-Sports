@@ -26,12 +26,12 @@ User.belongsTo(Sport, {
 });
 
 ////////////////////////////////
-User.hasMany(Sport, {
+User.hasMany(Team, {
   foreignKey: "players",
   onDelete: "CASCADE",
 });
 
-Sport.belongsTo(User, {
+Team.belongsTo(User, {
   foreignKey: "players",
 });
 
