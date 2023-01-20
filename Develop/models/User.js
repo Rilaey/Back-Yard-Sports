@@ -19,6 +19,7 @@ User.init(
     currently_available: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: true,
     },
     state: {
       type: DataTypes.STRING(2),
