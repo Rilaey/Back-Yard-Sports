@@ -3,24 +3,33 @@ const { Team, User } = require('../../models');
 const userAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
-    try {
-      const teamData = await Team.findAll({
-        where: {
-            sport: req.body.name
-        },
-        include: [
-            {
-                model: User
-            }
-        ]
-      });
-      console.log(teamData)
-      res.status(200).json(teamData);
-    } catch (err) {
-      res.status(500).json(err);
-      console.log(err);
+  try {
+    let where = {};
+    if (req.body.sport) {
+      where.sport = req.body.sport;
     }
-  });
+    if (req.body.zip) {
+      where.zip = req.body.zip;
+    }
+    if (req.body.state) {
+      where.state = req.body.state;
+    }
+    if (req.body.city) {
+      where.city = req.body.city;
+    }
+    const teamData = await Team.findAll({
+      where,
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+    res.status(200).json(teamData);
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
 
-  
-  module.exports = router;
+module.exports = router;
