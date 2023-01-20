@@ -25,6 +25,10 @@ User.init(
       type: DataTypes.STRING(2),
       allowNull: false,
     },
+    zip: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     city: {
       type: DataTypes.STRING,
       allowNull: false,
