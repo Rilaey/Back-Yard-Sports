@@ -27,15 +27,16 @@ const loginUser = async (event) => {
     event.preventDefault();
   
     const state = document.querySelector('#create-state').value.trim();
+    const zip = document.querySelector('#create-zip').value.trim();
     const city = document.querySelector('#create-city').value.trim();
     const username = document.querySelector('#create-username').value.trim();
     const email = document.querySelector('#create-email').value.trim();
     const password = document.querySelector('#create-password').value.trim();
   
-    if (state && city && username && email && password) {
+    if (state && zip && city && username && email && password) {
       const response = await fetch('/api/users/', {
         method: 'POST',
-        body: JSON.stringify({ state, city, username, email, password }),
+        body: JSON.stringify({ state, zip, city, username, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
