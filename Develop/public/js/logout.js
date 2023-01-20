@@ -1,12 +1,12 @@
 const logoutUser = async () => {
-    const response = await fetch('route to user api end point for logout', {
+    const response = await fetch('/api/user/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
   
     if (response.ok) {
       document.location.replace('/');
-      alert('Logged Out Successfully!')
+      alert('User logged out!')
     } else {
       alert(response.statusText);
     }
