@@ -1,0 +1,66 @@
+*{
+    transition: all .5s;
+    background-image: url(/img/backgroundimg.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.title{
+    
+    font-family:"Bungee", sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: underline;
+font-size: 56px;
+color: black;
+}
+
+
+nav{
+border: 2px;
+}
+
+.footer1, .footer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    
+}
+
+
+.jumbotron.jumbotron-fluid{
+    color: whitesmoke;
+    text-align: center;
+
+}
+.search{
+    margin: 5px;
+    border-color: black;
+}
+
+.row{
+    color: black;
+    
+
+}
+
+.btn.btn-primary{
+    color: black;
+    border-color: black;
+    border-width: 2px;
+}
+
+a:link {
+    color: black;
+}  
+
+a:visited {
+    color: black;
+}  
+a:active {
+    color: black;
+}  
