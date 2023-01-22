@@ -8,6 +8,7 @@ const teamData = [
         sport: 'Basketball',
         state: 'FL',
         city: 'Orlando',
+        team_zip_code: 32826,
     },
     {
         name: 'Best Baseball Team',
@@ -16,6 +17,7 @@ const teamData = [
         sport: 'Baseball',
         state: 'FL',
         city: 'Miami',
+        team_zip_code: 33101,
     },
     {
         name: 'Best Swimming Team',
@@ -24,6 +26,7 @@ const teamData = [
         sport: 'Swimming',
         state: 'FL',
         city: 'Tampa',
+        team_zip_code: 33592,
     },
     {
         name: 'Best Golf Team',
@@ -32,6 +35,7 @@ const teamData = [
         sport: 'Golf',
         state: 'FL',
         city: 'Tampa',
+        team_zip_code: 33592,
     },
 ];
 

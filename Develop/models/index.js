@@ -35,7 +35,5 @@ Team.belongsTo(User, {
   foreignKey: "players",
 });
 
-////////////////////////////////
-
 
 module.exports = { User, Team, Sport };
