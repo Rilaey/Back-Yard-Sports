@@ -1,0 +1,50 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Source Code Pro', monospace;
+}
+
+header {
+  border-bottom: 2px solid red;
+}
+
+main {
+  background-color: #475d62;
+  height: 100vh;
+}
+
+.profile-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-welcome {
+  padding: 50px;
+  font-size: 36px;
+}
+
+.info-box, .create-team-box, .create-sport-box, .all-teams-box {
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.name-box {
+    background: none;
+    border: 2px solid black;
+    color: white;
+    font-size: 18px;
+    margin: 5px auto;
+}
+
+.team-btn {
+    margin: 5px;
+}
+
+.box-header {
+    border-bottom: 2px solid black;
+}

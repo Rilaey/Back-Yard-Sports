@@ -2,7 +2,6 @@ const { User } = require('../models');
 
 const userData = [
     {
-        currently_available: 1,
         state: 'FL',
         zip: 32826,
         city: 'Orlando',
@@ -11,7 +10,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        currently_available: 0,
         state: 'FL',
         zip: 33101,
         city: 'Miami',
@@ -20,7 +18,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        currently_available: 0,
         zip: 33592,
         state: 'FL',
         city: 'Tampa',
@@ -29,7 +26,6 @@ const userData = [
         password: 'password123!'
     },
     {
-        currently_available: 1,
         state: 'FL',
         zip: 33592,
         city: 'Tampa',
