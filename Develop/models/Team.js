@@ -43,6 +43,10 @@ Team.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    team_zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,

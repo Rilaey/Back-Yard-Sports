@@ -16,12 +16,17 @@ User.init(
       autoIncrement: true,
       allowNull: false,
     },
-    available: {
+    currently_available: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: true,
     },
     state: {
       type: DataTypes.STRING(2),
+      allowNull: false,
+    },
+    zip: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     city: {
