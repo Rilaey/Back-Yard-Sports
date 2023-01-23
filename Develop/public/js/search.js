@@ -17,3 +17,4 @@ document
 
 console.log(document.location.search);
 document.querySelector('#search-state').value(document.location.search.state);
+
