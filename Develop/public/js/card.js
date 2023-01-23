@@ -2,40 +2,50 @@ const getCardData = () => Promise.resolve([
     {
         card: {
             url: "",
-            title: "First Card",
-            text: "This is the first card"
+            name: "Tigers",
+            sport: "Hockey",
+            city: "Orlando",
+            state: "Fl"
         }
     },
 
     {
         card: {
             url: "",
-            title: "Second Card",
-            text: "This is the second card"
+            name: "Panthers",
+            sport: "Baseball",
+            city: "Tampa",
+            state: "Fl"
         }
     },
 
     {
         card: {
             url: "",
-            title: "Third Card",
-            text: "This is the third card"
+            name: "Lions",
+            sport: "Soccer",
+            city: "Miami",
+            state: "Fl"
         }
     },
 
     {
         card: {
             url: "",
-            title: "Fourth Card",
-            text: "This is the fourth card"
+            name: "Bangles",
+            sport: "Tennis",
+            city: "Fort Lauderdale",
+            state: "Fl"
         }
     },
 
     {
         card: {
             url: "",
-            title: "Fifth Card",
-            text: "This is the fifth card"
+            name: "Tigers",
+            sport: "Hockey",
+            city: "Orlando",
+            state: "Fl"
         }
     },
 ]);
