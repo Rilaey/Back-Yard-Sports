@@ -8,7 +8,6 @@ header {
 }
 
 main {
-  height: 100vh;
   background: #475d62 url(../../assets/img/star-sky.jpg);
 }
 
@@ -84,14 +83,14 @@ main {
   transform: translateY(1px);
 }
 
-main {
+.login-container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-form {
+.login-container form {
     width: 400px;
 }
 
