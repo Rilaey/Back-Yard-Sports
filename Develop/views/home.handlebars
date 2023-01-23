@@ -1,9 +1,12 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Welcome Back, {{{Username}}} !</h1>
+<div class="p-5 mb-4 rounded-3">
+  <div class="container-fluid">
+    {{#if logged_in}}
+    <h1 class="display-4">Welcome Back, {{Username}}!</h1>
+    {{else}}
+    <h1 class="display-4">Welcome to Backyard Sports!</h1>
+    {{/if}}
   </div>
 </div>
-
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -33,9 +36,91 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 <div class="sportslist">List of available sports chat rooms populates for user to choose from</div>
 
 {{> card}}
->>>>>>> origin/main
+
+<div class="row">
+  <div class="p-5 search-form-container col-md-5 col-xs-6">
+    <form method="post" class="search-form">
+      <h2 class='sr-only'>Search Teams</h2>
+      <div class='illustration'>
+        <i class='icon ion-ios-locked-outline'></i>
+      </div>
+      <div class='form-group'>
+        <select name="state" id="search-state" class="form-select form-control">
+          {{#if where.state}}
+          <option value="">State</option>
+          {{#each states as |state|}}
+          {{#if (isSelected ../where.state state.value)}}
+            <option selected value="{{state.value}}">{{state.name}}</option>
+            {{else}}
+            <option value="{{state.value}}">{{state.name}}</option>
+            {{/if}}
+          {{/each}}
+          {{else}}
+          <option selected value="">State</option>
+          {{#each states as |state|}}
+            <option value="{{state.value}}">{{state.name}}</option>
+          {{/each}}
+          {{/if}}
+        </select>
+      </div>
+      <div class='form-group'>
+        <input class='form-control' type='text' name='zip' placeholder='Zip Code' id='search-zip' value='{{where.team_zip_code}}' />
+      </div>
+      <div class='form-group'>
+        <input class='form-control' type='text' name='city' placeholder='City' id='search-city' value='{{where.city}}' />
+      </div>
+      <div class='form-group'>
+        <select name="sport" id="search-sport" class="form-select form-control">
+          {{#if where.sport}}
+          <option value="">Sport</option>
+          {{#each sports as |sport|}}
+          {{#if (isSelected ../where.sport sport.name)}}
+            <option selected value="{{sport.name}}">{{sport.name}}</option>
+            {{else}}
+            <option value="{{sport.name}}">{{sport.name}}</option>
+            {{/if}}
+          {{/each}}
+          {{else}}
+          <option selected value="">Sport</option>
+          {{#each sports as |sport|}}
+            <option value="{{sport.name}}">{{sport.name}}</option>
+          {{/each}}
+          {{/if}}
+        </select>
+      </div>
+      <div class='form-group'>
+        <button class='btn btn-primary btn-block' type='submit'>
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="p-5 search-results-container col-md-7 col-xs-6">
+    <h2>Teams</h2>
+    {{#if teams}}
+    {{#each teams as |team| }}
+    <div class="teams row">
+      <div class="col-xs-12 team-container p-4 my-1">
+        <h4>{{team.name}}</h4>
+        <ul>
+          <li>Sport: {{team.sport}}</li>
+          <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
+          <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
+        </ul>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <div class="teams row">
+      <div class="col-xs-12 team-container p-4 my-1">
+        <h4>No Teams found. Please search again or <a href="/profile">create your own team</a>.</h4>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>
+
+<script src="./js/search.js"></script>
