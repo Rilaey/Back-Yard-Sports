@@ -116,8 +116,8 @@ router.get('/login', (req, res) => {
 // profile
 router.get('/profile', userAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(res.session.user_id, {
-      attributes: { exclude: password },
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: 'password' },
       includes: [{ module: Team }],
     });
 
