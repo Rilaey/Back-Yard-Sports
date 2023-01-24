@@ -1,18 +1,22 @@
-<div class="p-5 mb-4 rounded-3">
+<div class="p-5 rounded-3">
   <div class="container-fluid">
     {{#if logged_in}}
-    <h1 class="display-4">Welcome Back, {{Username}}!</h1>
+    <h1 class="display-4">Welcome Back, {{username}}!</h1>
     {{else}}
     <h1 class="display-4">Welcome to Backyard Sports!</h1>
     {{/if}}
   </div>
 </div>
+
 <div class="card-container">
   {{> card}}
 </div>
 
 <div class="row">
   <div class="p-5 search-form-container col-md-5 col-xs-6">
+
+<div class="row mr-0 pb-5">
+  <div class="px-5 search-form-container col-md-6">
     <form method="post" class="search-form">
       <h2 class='sr-only'>Search Teams</h2>
       <div class='illustration'>
@@ -74,7 +78,7 @@
     
     <div id="map"></div>
   </div>
-  <div class="py-5 search-results-container col-md-7 col-xs-6">
+  <div class="search-results-container col-md-6">
     <div class="p-5 dark-background">
       <h2>Teams</h2>
       {{#if teams}}

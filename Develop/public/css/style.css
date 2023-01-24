@@ -321,6 +321,10 @@ a:active {
     text-align: center;
 }
 
+.search-results-container .team-container {
+    color: #fff;
+}
+
 .dark-background {
     background-color: #1e2833;
     color: #fff;
