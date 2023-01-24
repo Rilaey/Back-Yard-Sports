@@ -2,57 +2,67 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // create new account
-router.post('/', async (req, res) => {
+router.post('/newUser', async (req, res) => {
   try {
     const newUser = await User.create({
-      currently_available: req.body.currently_available,
+      currently_available: true,
+      zip: req.body.zip,
       state: req.body.state,
       city: req.body.city,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.email,
+      password: req.body.password,
     });
+
+    console.log(newUser)
 
     req.session.save(() => {
       req.session.logged_in = true;
       res.status(200).json(newUser);
     });
+    
   } catch (err) {
-    req.status(500).json(err);
+    res.status(500).json(err);
     console.log(err);
   }
 });
 
-// login user
-router.post('/login', async (req, res) => {
+// Login
+router.post('/loginNow', async (req, res) => {
   try {
-    const userData = await User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      });
-  
-      if (!userData) {
-        res.status(400);
-        return;
-      }
-  
-      const correctPassword = await userData.checkPassword(req.body.password);
-  
-      if (!correctPassword) {
-        res.status(400)
-        return;
-      }
-  
-      req.session.save(() => {
-        req.session.logged_in = true;
-        req.session.user_id = userData.id;
-  
-        res.status(200);
-      });
+    const userDataBase = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    if (!userDataBase) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email. Please try again!' });
+      return;
+    }
+
+    const correctPassword = await userDataBase.checkPassword(req.body.password);
+
+    if (!correctPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect password. Please try again!' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+      req.session.user_id = userDataBase.id;
+
+      res
+        .status(200)
+        .json({ user: userDataBase, message: 'You are now logged in!' });
+    });
   } catch (err) {
-    res.status(500).json(err);
     console.log(err);
+    res.status(500).json(err);
   }
 });
 

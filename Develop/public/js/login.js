@@ -7,7 +7,7 @@ const loginUser = async (event) => {
   
     if (email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/user/loginNow', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -15,10 +15,10 @@ const loginUser = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the home page
-        document.location.replace('/');
+        document.location.replace('/profile');
         alert('Logged in!')
       } else {
-        alert(response.statusText);
+        alert('Unable to log in!');
       }
     }
   };
@@ -34,7 +34,7 @@ const loginUser = async (event) => {
     const password = document.querySelector('#create-password').value.trim();
   
     if (state && zip && city && username && email && password) {
-      const response = await fetch('/api/users/', {
+      const response = await fetch('/api/user/newUser', {
         method: 'POST',
         body: JSON.stringify({ state, zip, city, username, email, password }),
         headers: { 'Content-Type': 'application/json' },
