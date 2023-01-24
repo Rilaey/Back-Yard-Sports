@@ -215,7 +215,6 @@ a:active {
 /*************************** PROFILE STYLE END ******************************/
 /*************************** SEARCH STYLE START ******************************/
 .search-form-container {
-    background: #475d62;
     background-size: cover;
     position: relative;
 }
@@ -296,6 +295,10 @@ a:active {
 
 .search-results-container h4 {
     text-align: center;
+}
+
+.search-results-container .team-container {
+    color: #fff;
 }
 
 .dark-background {
