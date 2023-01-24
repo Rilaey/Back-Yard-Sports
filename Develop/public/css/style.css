@@ -25,7 +25,9 @@ color: black;
 }
 
 footer{
-    background-color: #070707;
+    background-color: #1a386a;
+    color: white;
+    text-align: center;
 }
 nav{
 border: 2px;
@@ -160,6 +162,7 @@ padding: auto;
 header {
     border-bottom: 2px solid red;
     background-color: #1a386a;
+    text-align: center;
 }
 
 .login-dark {
