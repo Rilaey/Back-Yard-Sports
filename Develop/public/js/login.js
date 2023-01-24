@@ -16,7 +16,7 @@ const loginUser = async (event) => {
       if (response.ok) {
         // If successful, redirect the browser to the home page
         document.location.replace('/profile');
-        alert('Logged in!')
+        // alert('Logged in!')
       } else {
         alert('Unable to log in!');
       }
@@ -42,9 +42,9 @@ const loginUser = async (event) => {
   
       if (response.ok) {
         document.location.replace('/profile');
-        alert("User Created!")
+        // alert("User Created!")
       } else {
-        alert(response.statusText);
+        alert('Unable to create account!');
       }
     }
   };

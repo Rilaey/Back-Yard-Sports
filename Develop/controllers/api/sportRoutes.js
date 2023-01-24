@@ -3,10 +3,10 @@ const { Sport } = require('../../models');
 const userAuth = require('../../utils/auth');
 
 // create sport
-router.post('/', userAuth, async (req, res) => {
+router.post('/newSport', userAuth, async (req, res) => {
   try {
     const newSport = Sport.create({
-      name: req.body.name,
+      name: req.body.sportName,
     });
 
     res.status(200).json(newSport);

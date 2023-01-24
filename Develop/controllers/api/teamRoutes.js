@@ -10,6 +10,7 @@ router.post('/', userAuth, async (req, res) => {
       captain: req.session.user_id,
       players: req.session.user_id,
       sport: req.body.sport,
+      team_zip_code: req.body.teamZipCode,
       state: req.body.state,
       city: req.body.city,
     });
