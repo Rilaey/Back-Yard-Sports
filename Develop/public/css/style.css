@@ -111,10 +111,9 @@ body {
 main {
   background-color: #475d62;
   background-image: url(../images/backgroundimg.jpeg);
-  background-size: cover; /*Changed this from cover so image can be seen better*/
-  /*background-attachment: fixed; /*I commented this out so the image can be seen better*/
-  background-repeat: no-repeat; /*Added this line so image can be seen better*/
-  background-position: center; /*Added this line so image can be seen better*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 nav {
@@ -133,7 +132,7 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 300px;
+  height: 200px;
 }
 
 footer {
@@ -200,7 +199,6 @@ a:visited {
 a:active {
   color: white;
 }
-
 /*************************** MAIN STYLE END ******************************/
 /*************************** PROFILE STYLE START ******************************/
 .profile-head {
@@ -254,7 +252,6 @@ a:active {
 /*************************** PROFILE STYLE END ******************************/
 /*************************** SEARCH STYLE START ******************************/
 .search-form-container {
-  /*background: #475d62; //I commented this out so the image can be seen better*/
   background-size: cover;
   position: relative;
 }
@@ -380,3 +377,60 @@ a:active {
   display: flex;
 }
 /*************************** CARD STYLE END ******************************/
+/*************************** CHAT STYLE START ******************************/
+/*body {
+    margin: 0;
+    padding-bottom: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}*/
+
+#form {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.25rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 3rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+#input {
+  border: none;
+  padding: 0 1rem;
+  flex-grow: 1;
+  border-radius:
+  2rem;
+  margin: 0.25rem;
+}
+
+#input:focus {
+  outline: none;
+}
+    
+#form .button {
+  background: #333;
+  border: none;
+  padding: 0 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+    
+#messages .li {
+  padding: 0.5rem 1rem;
+}
+    
+#messages .li:nth-child(odd) {
+  background: #efefef;
+}
+/*************************** CHAT STYLE END ******************************/
