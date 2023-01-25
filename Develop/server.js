@@ -50,30 +50,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 io.on('connection', (socket) => { //Socket.io requirement
-  socket.on('joinRoom', ({ username, room}) => {
-    const user = userJoin(socket.id, username, room);
-    socket.join(user.room);
-    socket.emit('chat message', formatMessage('CHAT BOT', `WELCOME TO ${user.room}`));
-    socket.broadcast.to(user.room).emit('chat message', formatMessage('CHAT BOT', `${user.username} HAS JOINED`));
-    io.to(user.room).emit('roomUsers', {
-      room: user.room,
-      users: getRoomUsers(user.room)
+  socket.on('joinRoom', ({ chatUsername, teamRoom}) => {
+    const user = userJoin(socket.id, chatUsername, teamRoom);
+    socket.join(user.teamRoom);
+    socket.emit('chat message', formatMessage('CHATBOT\n', `WELCOME TO ${user.teamRoom}`));
+    socket.broadcast.to(user.teamRoom).emit('chat message', formatMessage('CHATBOT\n', `${user.chatUsername} HAS JOINED`));
+    io.to(user.teamRoom).emit('roomUsers', {
+      teamRoom: user.teamRoom,
+      users: getRoomUsers(user.teamRoom)
     });
   });
   
   socket.on('chat message', msg => {
     const user = getCurrentUser(socket.id);
-    io.to(user.room).emit('chat message', formatMessage(user.username, msg));
+    io.to(user.teamRoom).emit('chat message', formatMessage(user.chatUsername + '\n', msg));
   });
 
   socket.on('disconnect', () => {
     const user = userLeave(socket.id);
 
     if (user) {
-      io.to(user.room).emit('chat message', formatMessage('CHAT BOT', `${user.username} HAS LEFT`));
-      io.to(user.room).emit('roomUsers', {
-        room: user.room,
-        users: getRoomUsers(user.room)
+      io.to(user.teamRoom).emit('chat message', formatMessage('CHATBOT\n', `${user.chatUsername} HAS LEFT`));
+      io.to(user.teamRoom).emit('roomUsers', {
+        teamRoom: user.teamRoom,
+        users: getRoomUsers(user.teamRoom)
       });
     }
   });

@@ -97,12 +97,14 @@
         <ul>
         {{#each teams as |team|}}
         <div class="profile-team-card dark-background m-3 p-3">
-          <h4>{{team.name}}</h4>
-          <ul>
-            <li>Sport: {{team.sport}}</li>
-            <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
-            <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
-          </ul>
+          <a href='/api/chat' target="_blank" style="text-decoration: none">
+            <h4>{{team.name}}</h4>
+            <ul>
+              <li>Sport: {{team.sport}}</li>
+              <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
+              <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
+            </ul>
+          </a>
         </div>
         {{/each}}
         </ul>

@@ -169,6 +169,18 @@ footer {
   color: white;
 }
 
+.display-cardHeader {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.display-cardJoin {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
 .jumbotron.jumbotron-fluid {
   color: whitesmoke;
   text-align: center;
@@ -438,12 +450,28 @@ a:active {
   padding: 0;
   color: white;
 }
-    
-#messages .li {
-  padding: 0.5rem 1rem;
+
+#users {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#room-name {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
 }
     
-#messages .li:nth-child(odd) {
-  background: #efefef;
+#messages .msg {
+  padding: 0.5rem 1rem;
+  background: green;
+}
+    
+#messages .msg:nth-last-child(odd) {
+  background: blue;
 }
 /*************************** CHAT STYLE END ******************************/
