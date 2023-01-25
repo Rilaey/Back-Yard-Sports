@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const router2 = require('express').Router(); //Socket.io requirement
 const { Sport, Team, User } = require('../models');
 const userAuth = require('../utils/auth');
 
@@ -141,16 +142,6 @@ router.get('/profile', userAuth, async (req, res) => {
       ...currentUser,
       logged_in: true,
     });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-  }
-});
-
-router.get('/chat', (req, res) => { //Have this here until I can figure oout how to incorporate chatRoutes
-  try {
-    res.render('chat');
-    //res.sendFile(__dirname, '../views/chat.html');
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
