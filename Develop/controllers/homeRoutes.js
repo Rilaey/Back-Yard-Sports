@@ -5,6 +5,16 @@ const userAuth = require('../utils/auth');
 // homepage
 router.get('/', async (req, res) => {
   try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: 'password' },
+      include: [{ 
+        model: Team,
+        include: [{ model: User }]
+      }],
+    });
+
+    const currentUser = userData.get({ plain: true });
+    
     let where = {};
     if (req.query.sport) {
       where.sport = req.query.sport;
@@ -87,6 +97,7 @@ router.get('/', async (req, res) => {
     ];
 
     res.render('home', {
+      ...currentUser,
       teams,
       sports,
       states,
