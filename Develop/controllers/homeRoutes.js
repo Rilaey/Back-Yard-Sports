@@ -13,9 +13,13 @@ router.get('/', async (req, res) => {
         include: [{ model: User }]
       }],
     });
+    console.log(userData);
 
-    const currentUser = userData.get({ plain: true });
-    
+    let currentUser = {};
+    if (userData) {
+      currentUser = userData.get({ plain: true });
+    }
+
     let where = {};
     if (req.query.sport) {
       where.sport = req.query.sport;
