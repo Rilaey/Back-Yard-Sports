@@ -225,7 +225,7 @@ a:active {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  height: 60vh;
+  min-height: 60vh;
 }
 
 .name-box {
@@ -242,6 +242,10 @@ a:active {
 
 .box-header {
   border-bottom: 2px solid black;
+}
+
+.profile-team-card li {
+  text-align: left;
 }
 
 @media screen and (max-width: 850px) {

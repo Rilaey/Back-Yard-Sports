@@ -116,11 +116,12 @@ router.get('/login', (req, res) => {
 // profile
 router.get('/profile', userAuth, async (req, res) => {
   try {
-    console.log("Hello World");
-    console.log('Session', req.session);
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: 'password' },
-      includes: [{ module: Team }],
+      include: [{ 
+        model: Team,
+        include: [{ model: User }]
+      }],
     });
 
     const currentUser = userData.get({ plain: true });

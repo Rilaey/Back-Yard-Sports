@@ -58,8 +58,6 @@ getTeamData = async () => {
 };
 
 joinTeam = async (teamId) => {
-  console.log('Team Id: ', teamId);
-  
   const response = await fetch('/api/team/join', {
     method: 'PUT',
     body: JSON.stringify({

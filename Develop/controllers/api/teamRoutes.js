@@ -27,7 +27,6 @@ router.put('/join', userAuth, async (req, res) => {
     const teamId = req.body.teamId;
     const userId = req.session.user_id;
     const team = await Team.findByPk(teamId);
-    console.log(team);
     team.update({ players: userId });
     res.status(200).json(team);
   } catch (err) {

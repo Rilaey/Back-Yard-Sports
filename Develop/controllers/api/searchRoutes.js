@@ -6,7 +6,6 @@ const NodeGeocoder = require('node-geocoder');
 router.get('/', async (req, res) => {
   try {
     let where = {};
-    console.log(req.query);
     if (req.query.sport) {
       where.sport = req.query.sport;
     }
@@ -27,7 +26,6 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    console.log(teamData);
 
     const geocoder = NodeGeocoder({
         provider: 'tomtom',

@@ -4,7 +4,6 @@ module.exports = {
     return date.toLocaleDateString();
   },
   isSelected: (whereValue, selectValue) => {
-    console.log('isSelected: ', whereValue, selectValue);
     if (whereValue === selectValue) {
       return true;
     } else {
