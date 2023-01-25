@@ -50,9 +50,9 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on local host!'));
 });
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
-});
+});*/
 
 io.on('connection', (socket) => {
   socket.on('chat message', msg => {
