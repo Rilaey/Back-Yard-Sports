@@ -15,14 +15,6 @@ Sport.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    players: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
