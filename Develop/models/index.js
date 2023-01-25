@@ -3,7 +3,6 @@ const Team = require("./Team");
 const Sport = require("./Sport");
 
 ////////////////////////////////
-
 User.hasMany(Team, {
   foreignKey: "captain",
   onDelete: "CASCADE",
@@ -14,7 +13,6 @@ Team.belongsTo(User, {
 });
 
 ////////////////////////////////
-
 // this association does nothing, but seeds don't work if i remove it.
 Sport.hasMany(User, {
   foreignKey: "sports_played",
@@ -35,6 +33,5 @@ Team.belongsTo(User, {
   foreignKey: "players",
   as: "player"
 });
-
 
 module.exports = { User, Team, Sport };
