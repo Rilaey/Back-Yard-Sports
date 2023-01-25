@@ -3,15 +3,16 @@ const { Team } = require('../../models');
 const userAuth = require('../../utils/auth');
 
 // create new team
-router.post('/', userAuth, async (req, res) => {
+router.post('/newTeam', userAuth, async (req, res) => {
   try {
     const newTeam = Team.create({
-      name: req.body.name,
+      name: req.body.teamName,
       captain: req.session.user_id,
       players: req.session.user_id,
-      sport: req.body.sport,
-      state: req.body.state,
-      city: req.body.city,
+      sport: req.body.teamSport,
+      team_zip_code: req.body.teamZipCode,
+      state: req.body.teamState,
+      city: req.body.teamCity,
     });
 
     res.status(200).json(newTeam);

@@ -4,14 +4,14 @@ const newSportDataBase = async (event) => {
   const sportName = document.querySelector('#sport-name').value.trim();
 
   if (sportName) {
-    const response = await fetch('/api/sport', {
+    const response = await fetch('/api/sport/newSport', {
       method: 'POST',
       body: JSON.stringify({ sportName }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    // console.log(sportName)
     if(response.ok) {
         alert('Sport Created!')
     } else {
