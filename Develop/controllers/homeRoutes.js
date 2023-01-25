@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-        },
+        }
       ],
     });
     const sportData = await Sport.findAll();
@@ -123,7 +123,6 @@ router.get('/profile', userAuth, async (req, res) => {
       includes: [{ module: Team }],
     });
 
-    console.log("userData", userData);
     const currentUser = userData.get({ plain: true });
 
     res.render('profile', {

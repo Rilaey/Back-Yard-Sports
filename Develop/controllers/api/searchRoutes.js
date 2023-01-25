@@ -4,7 +4,6 @@ const userAuth = require('../../utils/auth');
 const NodeGeocoder = require('node-geocoder');
 
 router.get('/', async (req, res) => {
-    console.log("Stupid");
   try {
     let where = {};
     console.log(req.query);
@@ -28,6 +27,7 @@ router.get('/', async (req, res) => {
         },
       ],
     });
+    console.log(teamData);
 
     const geocoder = NodeGeocoder({
         provider: 'tomtom',

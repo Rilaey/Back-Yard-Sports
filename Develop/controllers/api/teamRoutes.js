@@ -21,4 +21,18 @@ router.post('/', userAuth, async (req, res) => {
   }
 });
 
+router.put('/join', userAuth, async (req, res) => {
+  try {
+    const teamId = req.body.teamId;
+    const userId = req.session.user_id;
+    const team = await Team.findByPk(teamId);
+    console.log(team);
+    team.update({ players: userId });
+    res.status(200).json(team);
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+})
+
 module.exports = router;

@@ -51,6 +51,7 @@ const getCardData = () => Promise.resolve([
 ]);
 
 const cardMiddleware = async (req, res, next) => {
+    console.log("Card middlewear was called")
     if (!res.locals.partials) res.locals.partials = {}
     res.locals.partials.cardContext = await getCardData()
     next()
