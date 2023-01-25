@@ -14,8 +14,6 @@ router.post('/newUser', async (req, res) => {
       password: req.body.password,
     });
 
-    console.log(newUser)
-
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = newUser.id;

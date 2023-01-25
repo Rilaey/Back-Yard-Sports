@@ -31,6 +31,7 @@ User.hasMany(Team, {
 
 Team.belongsTo(User, {
   foreignKey: "players",
+  as: "player"
 });
 
 module.exports = { User, Team, Sport };

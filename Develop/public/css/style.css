@@ -93,6 +93,7 @@
     padding-bottom: 30px;
   }
 }
+
 /*************************** LOGIN STYLE END ******************************/
 /*************************** MAIN STYLE START ******************************/
 * {
@@ -222,7 +223,7 @@ a:active {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  height: 60vh;
+  min-height: 60vh;
 }
 
 .name-box {
@@ -241,6 +242,10 @@ a:active {
   border-bottom: 2px solid black;
 }
 
+.profile-team-card li {
+  text-align: left;
+}
+
 @media screen and (max-width: 850px) {
   .all-boxes {
     display: flex;
@@ -249,6 +254,7 @@ a:active {
     text-align: center;
   }
 }
+
 /*************************** PROFILE STYLE END ******************************/
 /*************************** SEARCH STYLE START ******************************/
 .search-form-container {
@@ -281,15 +287,20 @@ a:active {
   color: inherit;
 }
 
-.search-form-container form .btn-primary {
-  background: #214a80;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 26px;
-  text-shadow: none;
-  outline: none;
+.search-form-container form .btn-primary,
+.search-results-container .btn-primary {
+    background: #214a80;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 26px;
+    text-shadow: none;
+    outline: none;
+}
+
+.search-results-container .btn-primary {
+    float: right;
 }
 
 .search-form-container form .btn-primary:hover,
@@ -353,6 +364,7 @@ a:active {
   margin-top: 40px;
   height: 400px;
 }
+
 /*************************** SEARCH STYLE END ******************************/
 /*************************** CARD STYLE START ******************************/
 .card {

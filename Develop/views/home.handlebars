@@ -12,9 +12,6 @@
   {{> card}}
 </div>
 
-<div class="row">
-  <div class="p-5 search-form-container col-md-5 col-xs-6">
-
 <div class="row mr-0 pb-5">
   <div class="px-5 search-form-container col-md-6">
     <form method="post" class="search-form">
@@ -91,6 +88,9 @@
             <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
             <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
           </ul>
+          {{#if ../logged_in}}
+          <button class="btn-primary btn-block" id="joinTeam{{team.id}}" onclick="joinTeam({{team.id}})">Join Team</button>
+          {{/if}}
         </div>
       </div>
       {{/each}}

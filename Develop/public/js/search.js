@@ -57,4 +57,23 @@ getTeamData = async () => {
   }
 };
 
+joinTeam = async (teamId) => {
+  const response = await fetch('/api/team/join', {
+    method: 'PUT',
+    body: JSON.stringify({
+      teamId: teamId
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    $(`#joinTeam${teamId}`).prop('disabled', true);
+    $(`#joinTeam${teamId}`).text('Team Joined!');
+  } else {
+    alert('Failed to join team.');
+  }
+}
+
 getTeamData();

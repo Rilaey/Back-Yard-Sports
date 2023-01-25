@@ -89,12 +89,23 @@
 <!-- create sport and show all teams user is apart of -->
 <section class='container'>
   <div class='row'>
-    <div class='col-6 all-teams-box'>
+    <div class='col-6 all-teams-box mb-4'>
       <div class='my-teams-head'>
         <h2 class='box-header'>My Teams</h2>
       </div>
       <div class='my-teams-display'>
-        <p>{{players}}</p>
+        <ul>
+        {{#each teams as |team|}}
+        <div class="profile-team-card dark-background m-3 p-3">
+          <h4>{{team.name}}</h4>
+          <ul>
+            <li>Sport: {{team.sport}}</li>
+            <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
+            <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
+          </ul>
+        </div>
+        {{/each}}
+        </ul>
       </div>
     </div>
     <div class='col-6 create-sport-box'>
