@@ -258,6 +258,13 @@ a:active {
   text-align: left;
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+}
+
 @media screen and (max-width: 850px) {
   .all-boxes {
     display: flex;
@@ -266,6 +273,28 @@ a:active {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 670px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .small-txt {
+    font-size: 14px;
+  }
+}
+
+/* @media screen and (max-width: 878px) {
+  .top-five {
+    display: flex;
+    flex
+  }
+} */
 
 /*************************** PROFILE STYLE END ******************************/
 /*************************** SEARCH STYLE START ******************************/
