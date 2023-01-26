@@ -127,7 +127,6 @@ header {
   top: 0;
   position: sticky;
   z-index: 999;
-  border-bottom: 2px solid red;
   background-color: #1a386a;
   background-image: url(../images/BackyardSportsLogo1.png);
   background-size: contain;
