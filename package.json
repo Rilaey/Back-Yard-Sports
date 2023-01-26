@@ -1,12 +1,15 @@
 {
     "name": "develop",
     "version": "1.0.0",
+    "engines": {
+      "node": "16.17.0"
+    },
     "description": "",
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "seeds": "node seeds/index.js",
-      "start": "cd develop && node server.js"
+      "seeds": "node Develop/seeds/index.js",
+      "start": "cd Develop && node server.js"
     },
     "keywords": [],
     "author": "",
