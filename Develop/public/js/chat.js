@@ -4,14 +4,9 @@ var input = document.getElementById('input');
 var messages = document.getElementById('messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+const chatUsername = document.getElementById('username').innerHTML;
+const teamRoom = localStorage.getItem("Team");
 
-const chatUsername = 'Potato';
-
-
-const teamRoom = 'Blades Of Glory';
-// const { chatUsername, teamRoom } = Qs.parse(location.search, {
-//     ignoreQueryPrefix: true
-// });
 
 socket.emit('joinRoom', { chatUsername, teamRoom});
 
@@ -36,7 +31,6 @@ socket.on('chat message', function(msg) {
     item.innerHTML = `<ul id='chat-message'><li>${msg.chatUsername}<span>${msg.time}</span><p class="text">${msg.text}</li></ul>`;
     messages.appendChild(item);
     window.scrollTo(0, document.body.scrollHeight);
-    console.log(msg);
 });
 
 function outputRoomName(teamRoom) {

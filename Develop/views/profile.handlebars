@@ -1,3 +1,16 @@
+<header class='display-flex justify-space-between align-center p-2'>
+  <nav>
+    <a href='/'>Home</a>
+    <a href='/profile'>Profile</a>
+    {{#if logged_in}}
+      <button class='no-button' id='logout'>Logout</button>
+    {{/if}}
+    {{#unless logged_in}}
+      <a href='/login'>Login</a>
+    {{/unless}}
+  </nav>
+</header>
+
 <!-- welcome back user -->
 <section class='container'>
   <div class='row'>
@@ -97,8 +110,8 @@
         <ul>
         {{#each teams as |team|}}
         <div class="profile-team-card dark-background m-3 p-3">
-          <a href='/api/chat' target="_blank" style="text-decoration: none">
-            <h4>{{team.name}}</h4>
+          <a href='/api/chat' target="_blank" style="text-decoration: none" class="select-team">
+            <h4 class="team-name">{{team.name}}</h4>
             <ul>
               <li>Sport: {{team.sport}}</li>
               <li>Captain: {{team.user.username}}, Email: {{team.user.email}}</li>
@@ -132,4 +145,6 @@
       </form>
     </div>
   </div>
+
+  <script src='/js/profile.js'></script>
 </section>
