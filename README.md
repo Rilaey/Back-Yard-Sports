@@ -39,20 +39,7 @@
   - Github: https://github.com/lizramos611
 
 <br>
-Acceptance Criteria<br>
-GIVEN the web application<br>
-WHEN I open Backyard Sports<br>
-THEN I am presented with a home page with links in the navigation bar<br>
-WHEN I click on the link to login/profile<br>
-THEN I am presented with a page that allows the user to create an account or login with an existing account<br>
-WHEN I create an account or login<br>
-THEN a profile page will be presented with profile information including your info, your teams and the ability to creat a team and sport<br>
-WHEN I click on home page<br>
-THEN the page will show a search box for teams and the saved teams<br>
-WHEN I save a team<br>
-THEN it will display the sport, captain, emil and location<br>
-WHEN I click on the team in your profile page<br>
-THEN I am presented a chat room with others that have joined the team<br>
+
 <br>
 Deployed Link:
 <br>
