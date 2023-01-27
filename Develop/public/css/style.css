@@ -428,6 +428,17 @@ a:active {
   justify-content: center;
   display: flex;
 }
+
+.card .btn-primary {
+    background: #214a80;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 26px;
+    text-shadow: none;
+    outline: none;
+}
 /*************************** CARD STYLE END ******************************/
 /*************************** CHAT STYLE START ******************************/
 /*body {

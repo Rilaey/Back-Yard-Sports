@@ -18,7 +18,14 @@
 </div>
 
 <div class="card-container">
-  {{> card}}
+  {{#each cards as |team|}}
+    <div class ="card">
+        <h2 class="small-txt" style="color:white">{{team.name}}</h2>
+        <p class="small-txt" style="color:white">{{team.sport}}</p>
+        <p class="small-txt" style="color:white">{{team.city}}, {{team.state}}</p>
+        <button class="btn-primary btn-block" id="joinTeam{{team.id}}" onclick="joinTeam({{team.id}})">Join</button>
+    </div>
+  {{/each}}
 </div>
 
 <div class="row mr-0 pb-5">
@@ -131,6 +138,7 @@ function initMap() {
 }
 </script>
 <script src="./js/search.js"></script>
+<!--<script src="./js/cardTeams.js"></script>-->
 <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc&callback=initMap">
 </script>

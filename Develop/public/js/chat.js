@@ -6,7 +6,8 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 const chatUsername = document.getElementById('username').innerHTML;
 const teamRoom = localStorage.getItem("Team");
-
+// let tempUserList = document.getElementById('users').innerHTML;
+// localStorage.setItem('Users', tempUserList);
 
 socket.emit('joinRoom', { chatUsername, teamRoom});
 
