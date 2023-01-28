@@ -25,7 +25,6 @@ getTeamData = async () => {
 
   let teams = [];
   if (response.ok) {
-    // document.location.reload();
     teams = await response.json();
   } else {
     alert('Failed to get the team data');

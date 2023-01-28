@@ -1,7 +1,8 @@
-const cbox = document.querySelectorAll(".select-team");
+const teamBox = document.querySelectorAll(".select-team");
+// const users = localStorage.getItem("Users");
 
- for (let i = 0; i < cbox.length; i++) {
-     cbox[i].addEventListener("click", function() {
+ for (let i = 0; i < teamBox.length; i++) {
+    teamBox[i].addEventListener("click", function() {
         const grabTeamName = this.querySelector('.team-name').textContent;
         localStorage.setItem('Team', grabTeamName);
      });

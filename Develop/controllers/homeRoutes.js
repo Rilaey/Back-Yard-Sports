@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const router2 = require('express').Router(); //Socket.io requirement
 const { Sport, Team, User } = require('../models');
 const userAuth = require('../utils/auth');
 
@@ -13,7 +12,6 @@ router.get('/', async (req, res) => {
         include: [{ model: User }]
       }],
     });
-    console.log(userData);
 
     let currentUser = {};
     if (userData) {
@@ -42,11 +40,20 @@ router.get('/', async (req, res) => {
         }
       ],
     });
-    const sportData = await Sport.findAll();
 
+    const cardTeams = [];
+    let counter = teamData.length;
+    for (let i=0; i<5; i++) {
+        if (counter >= 1) {
+            cardTeams.push(teamData[counter-1]);
+            counter--;
+        }
+    }
+
+    const sportData = await Sport.findAll();
     const teams = teamData.map((x) => x.get({ plain: true }));
     const sports = sportData.map((x) => x.get({ plain: true }));
-
+    const cards = cardTeams.map((x) => x.get({ plain: true }));
     const states = [
       { name: 'Alabama', value: 'AL' },
       { name: 'Alaska', value: 'AK' },
@@ -103,6 +110,7 @@ router.get('/', async (req, res) => {
 
     res.render('home', {
       ...currentUser,
+      cards,
       teams,
       sports,
       states,

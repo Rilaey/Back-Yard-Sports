@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers')
-cardMiddleware = require('./utils/card');
+//cardMiddleware = require('./utils/card');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
@@ -39,7 +39,7 @@ const sess = {
 };
 
 app.use(session(sess));
-app.use(cardMiddleware);
+//app.use(cardMiddleware);
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
