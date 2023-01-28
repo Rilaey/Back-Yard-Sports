@@ -86,6 +86,10 @@ a {
   text-decoration: none;
 }
 
+.small-links {
+  color: white;
+}
+
 @media screen and (max-width: 850px) {
   .login-container {
     display: flex;
@@ -99,7 +103,7 @@ a {
 }
 
 @media screen and (max-width: 1037px) {
-  .small-links:visited {
+  .small-links {
     text-decoration: none;
     color: black;
   }
@@ -226,7 +230,7 @@ footer {
   border-width: 2px;
 }
 
-a:link {
+/* a:link {
   color: white;
 }
 
@@ -236,7 +240,7 @@ a:visited {
 
 a:active {
   color: white;
-}
+} */
 /*************************** MAIN STYLE END ******************************/
 /*************************** PROFILE STYLE START ******************************/
 .profile-head {
@@ -255,12 +259,12 @@ a:active {
 .create-team-box,
 .create-sport-box,
 .all-teams-box {
-  border: 4px solid black;
+  border: 5px solid black;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 30vh;
 }
 
 .name-box {
@@ -289,6 +293,24 @@ a:active {
   /* align-items: center; */
   text-align: center;
 }
+
+.select-team {
+  text-decoration: none;
+  color: lightslategray;
+}
+
+/* @media screen and (max-width: 900px) {
+  .info-box,
+  .create-team-box,
+  .create-sport-box,
+  .all-teams-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+} */
 
 @media screen and (max-width: 850px) {
   .all-boxes {
@@ -355,18 +377,18 @@ a:active {
 
 .search-form-container form .btn-primary,
 .search-results-container .btn-primary {
-    background: #214a80;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 26px;
-    text-shadow: none;
-    outline: none;
+  background: #214a80;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
 }
 
 .search-results-container .btn-primary {
-    float: right;
+  float: right;
 }
 
 .search-form-container form .btn-primary:hover,
@@ -456,14 +478,14 @@ a:active {
 }
 
 .card .btn-primary {
-    background: #214a80;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 26px;
-    text-shadow: none;
-    outline: none;
+  background: #214a80;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
 }
 /*************************** CARD STYLE END ******************************/
 /*************************** CHAT STYLE START ******************************/
@@ -490,15 +512,14 @@ a:active {
   border: none;
   padding: 0 1rem;
   flex-grow: 1;
-  border-radius:
-  2rem;
+  border-radius: 2rem;
   margin: 0.25rem;
 }
 
 #input:focus {
   outline: none;
 }
-    
+
 #form .button {
   background: #333;
   border: none;
@@ -530,12 +551,12 @@ a:active {
   color: white;
   background-color: black;
 }
-    
+
 #messages .msg {
   padding: 0.5rem 1rem;
   background: green;
 }
-    
+
 #messages .msg:nth-last-child(odd) {
   background: blue;
 }

@@ -1,12 +1,12 @@
 <header class='display-flex justify-space-between align-center p-2'>
   <nav>
-    <a href='/'>Home</a>
-    <a href='/profile'>Profile</a>
+    <a class="small-links" href='/'>Home</a>
+    <a class="small-links" href='/profile'>Profile</a>
     {{#if logged_in}}
       <button class='no-button' id='logout'>Logout</button>
     {{/if}}
     {{#unless logged_in}}
-      <a href='/login'>Login</a>
+      <a class="small-links" href='/login'>Login</a>
     {{/unless}}
   </nav>
 </header>
@@ -24,7 +24,7 @@
 <section class='container'>
   <div class='row'>
     <!-- my info -->
-    <div class='col-6 info-box'>
+    <div class='col-xs-12 info-box profile-box'>
       <div class='info-head'>
         <h2 class='box-header'>My info</h2>
       </div>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <!-- create team -->
-    <div class='col-6 create-team-box'>
+    <div class='col-xs-12 create-team-box profile-box'>
       <form class='new-team'>
         <div class='create-head'>
           <h2 class='box-header'>Create A Team</h2>
@@ -103,7 +103,7 @@
 <!-- create sport and show all teams user is apart of -->
 <section class='container'>
   <div class='row'>
-    <div class='col-6 all-teams-box mb-4'>
+    <div class='col-xs-12 all-teams-box mb-4 profile-box'>
       <div class='my-teams-head'>
         <h2 class='box-header'>My Teams</h2>
         <h3>Click A Team To Enter A Chatroom</h3>
@@ -125,7 +125,7 @@
         </ul>
       </div>
     </div>
-    <div class='col-6 create-sport-box'>
+    <div class='col-xs-12 create-sport-box profile-box'>
       <form class='new-sport'>
         <div class='new-sport-head'>
           <h2 class='box-header'>Create A Sport</h2>
