@@ -1,16 +1,22 @@
 <header class='display-flex justify-space-between align-center p-2'></header>
 
 <p id="room-name"></p>
+{{!-- {{#if username === }}
+      <button class='no-button' id='logout'>Logout</button>
+    {{/if}}
+    {{#unless logged_in}}
+      <a href='/login'>Login</a>
+    {{/unless}} --}}
 <ul id="messages"></ul>
 
-<div class="users-container">
+{{!-- <div class="users-container">
   <li id="users"></li>
-</div>
+</div> --}}
 
 <span id="username" style="display: none">{{username}}</span>
 
 <form id="form" action="">
-  <input id="input" autocomplete="off" /><button>Send</button>
+  <input id="input" autocomplete="off" /><button style="border-radius: 1rem">Send</button>
 </form>
 
 <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
