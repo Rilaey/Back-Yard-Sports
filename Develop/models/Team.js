@@ -23,14 +23,6 @@ Team.init(
         key: 'id',
       },
     },
-    players: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
     sport: {
       type: DataTypes.STRING,
       allowNull: false,

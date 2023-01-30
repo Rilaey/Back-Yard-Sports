@@ -1,6 +1,7 @@
 const seedSportsData = require("./sportSeeds");
 const seedTeamData = require("./teamSeeds");
 const seedUserData = require("./userSeeds");
+const seedTeamMemberData = require("./teamMembers");
 const sequelize = require('../config/connection');
 
 const seedDataBase = async () => {
@@ -14,6 +15,9 @@ const seedDataBase = async () => {
 
   await seedTeamData();
   console.log("*****TEAMS SEEDED*****");
+
+  await seedTeamMemberData();
+  console.log("*****TEAM MEMBERS SEEDED*****");
 };
 
 seedDataBase();

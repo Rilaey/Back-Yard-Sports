@@ -56,6 +56,25 @@ getTeamData = async () => {
   }
 };
 
+joinTeamMostRecent = async (teamId) => {
+  const response = await fetch('/api/team/join', {
+    method: 'PUT',
+    body: JSON.stringify({
+      teamId: teamId
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    $(`#joinTeamMostRecent${teamId}`).prop('disabled', true);
+    $(`#joinTeamMostRecent${teamId}`).text('Team Joined!');
+  } else {
+    alert('Failed to join team.');
+  }
+}
+
 joinTeam = async (teamId) => {
   const response = await fetch('/api/team/join', {
     method: 'PUT',

@@ -23,7 +23,13 @@
         <h2 class="small-txt" style="color:white">{{team.name}}</h2>
         <p class="small-txt" style="color:white">{{team.sport}}</p>
         <p class="small-txt" style="color:white">{{team.city}}, {{team.state}}</p>
-        <button class="btn-primary btn-block" id="joinTeam{{team.id}}" onclick="joinTeam({{team.id}})">Join</button>
+        {{#if ../logged_in}}
+        {{#if (isMemberOfTeam ../teams team.id)}}
+        <button class="btn-primary btn-block" disabled>Team Joined!</button>
+        {{else}}
+        <button class="btn-primary btn-block" id="joinTeamMostRecent{{team.id}}" onclick="joinTeamMostRecent({{team.id}})">Join</button>
+        {{/if}}
+        {{/if}}
     </div>
   {{/each}}
 </div>
@@ -93,8 +99,8 @@
   <div class="search-results-container col-md-6">
     <div class="p-5 dark-background">
       <h2>Teams</h2>
-      {{#if teams}}
-      {{#each teams as |team| }}
+      {{#if teamsFound}}
+      {{#each teamsFound as |team| }}
       <div class="teams row">
         <div class="col-xs-12 team-container p-4 my-1">
           <h4>{{team.name}}</h4>
@@ -104,7 +110,11 @@
             <li>Location: {{team.city}}, {{team.state}} {{team.team_zip_code}}</li>
           </ul>
           {{#if ../logged_in}}
+          {{#if (isMemberOfTeam ../teams team.id)}}
+          <button class="btn-primary btn-block" disabled>Team Joined!</button>
+          {{else}}
           <button class="btn-primary btn-block" id="joinTeam{{team.id}}" onclick="joinTeam({{team.id}})">Join Team</button>
+          {{/if}}
           {{/if}}
         </div>
       </div>

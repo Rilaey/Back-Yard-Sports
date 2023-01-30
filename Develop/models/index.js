@@ -1,5 +1,6 @@
 const User = require("./User");
 const Team = require("./Team");
+const TeamMember = require("./TeamMember");
 const Sport = require("./Sport");
 
 ////////////////////////////////
@@ -24,14 +25,27 @@ User.belongsTo(Sport, {
 });
 
 ////////////////////////////////
-User.hasMany(Team, {
-  foreignKey: "players",
+User.belongsToMany(Team, {
+  through: TeamMember,
+  foreignKey: 'player_id'
+});
+
+User.hasMany(TeamMember, {
+  foreignKey: "player_id",
   onDelete: "CASCADE",
 });
 
-Team.belongsTo(User, {
-  foreignKey: "players",
-  as: "player"
+Team.hasMany(TeamMember, {
+  foreignKey: "team_id",
+  onDelete: "CASCADE",
 });
 
-module.exports = { User, Team, Sport };
+TeamMember.belongsTo(User, {
+  foreignKey: 'player_id'
+});
+
+TeamMember.belongsTo(Team, {
+  foreignKey: 'team_id'
+});
+
+module.exports = { User, Team, TeamMember, Sport };
