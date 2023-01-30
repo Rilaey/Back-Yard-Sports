@@ -44,14 +44,14 @@ router.get('/', async (req, res) => {
     const cardTeams = [];
     let counter = teamData.length;
     for (let i=0; i<5; i++) {
-        if (counter >= 1) {
-            cardTeams.push(teamData[counter-1]);
-            counter--;
-        }
+      if (counter >= 1) {
+          cardTeams.push(teamData[counter-1]);
+          counter--;
+      }
     }
 
     const sportData = await Sport.findAll();
-    const teams = teamData.map((x) => x.get({ plain: true }));
+    const teamsFound = teamData.map((x) => x.get({ plain: true }));
     const sports = sportData.map((x) => x.get({ plain: true }));
     const cards = cardTeams.map((x) => x.get({ plain: true }));
     const states = [
@@ -111,7 +111,7 @@ router.get('/', async (req, res) => {
     res.render('home', {
       ...currentUser,
       cards,
-      teams,
+      teamsFound,
       sports,
       states,
       where,
