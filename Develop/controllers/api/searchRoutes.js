@@ -36,8 +36,12 @@ router.get('/', async (req, res) => {
     for (let i = 0; i < teamData.length; i++) {
         let team = teamData[i];
         const address = `${team.city}, ${team.state} ${team.team_zip_code}`;
-        const geocode = await geocoder.geocode(address);
-        team.dataValues.geocode = geocode[0];
+        try {
+          const geocode = await geocoder.geocode(address);
+          team.dataValues.geocode = geocode[0];
+        } catch(err) {
+          console.log(err);
+        }
         teams.push(team)
     };
   
