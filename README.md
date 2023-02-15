@@ -26,7 +26,7 @@
   - https://opensource.org/licenses/MIT
 
   ## Contributions
-  - Riley NewHart, Antonio De Filippis, Amanda Cappleman, & Elizabeth Ramos
+  - Riley Newhart, Antonio De Filippis, Amanda Cappleman, & Elizabeth Ramos
 
   ## Tests
   
