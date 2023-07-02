@@ -158,11 +158,10 @@ header {
   z-index: 999;
   background-color: #1a386a;
   background-image: url(../images/BackyardSportsLogo1.png);
-  border-radius: 40%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 200px;
+  height: 100px;
 }
 
 footer {
